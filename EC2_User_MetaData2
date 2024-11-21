@@ -1,0 +1,68 @@
+#!/bin/bash
+yum install httpd -y
+systemctl enable httpd
+systemctl start httpd 
+yum install git -y
+
+cd /var/www/html 
+sudo rm -rf *
+
+
+echo "<!DOCTYPE html>" >> index.html
+echo "<html lang=\"en\">" >> index.html
+echo "<head>" >> index.html
+echo "    <meta charset=\"UTF-8\">" >> index.html
+echo "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" >> index.html
+echo "    <title>HTML Form Example</title>" >> index.html
+echo "    <style>" >> index.html
+echo "        body {" >> index.html
+echo "            font-family: Arial, sans-serif;" >> index.html
+echo "            margin: 0;" >> index.html
+echo "            padding: 20px;" >> index.html
+echo "            background-color: #f9f9f9;" >> index.html
+echo "        }" >> index.html
+echo "        form {" >> index.html
+echo "            max-width: 400px;" >> index.html
+echo "            margin: auto;" >> index.html
+echo "            background: #fff;" >> index.html
+echo "            padding: 20px;" >> index.html
+echo "            border-radius: 8px;" >> index.html
+echo "            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" >> index.html
+echo "        }" >> index.html
+echo "        label {" >> index.html
+echo "            display: block;" >> index.html
+echo "            margin-bottom: 8px;" >> index.html
+echo "            font-weight: bold;" >> index.html
+echo "        }" >> index.html
+echo "        input, select, textarea, button {" >> index.html
+echo "            width: 100%;" >> index.html
+echo "            padding: 10px;" >> index.html
+echo "            margin-bottom: 15px;" >> index.html
+echo "            border: 1px solid #ccc;" >> index.html
+echo "            border-radius: 4px;" >> index.html
+echo "            box-sizing: border-box;" >> index.html
+echo "        }" >> index.html
+echo "        button {" >> index.html
+echo "            background-color: #4CAF50;" >> index.html
+echo "            color: white;" >> index.html
+echo "            border: none;" >> index.html
+echo "            cursor: pointer;" >> index.html
+echo "        }" >> index.html
+echo "        button:hover {" >> index.html
+echo "            background-color: #45a049;" >> index.html
+echo "        }" >> index.html
+echo "    </style>" >> index.html
+echo "</head>" >> index.html
+echo "<body>" >> index.html
+echo "    <form action=\"/submit\" method=\"POST\">" >> index.html
+echo "        <h2>Contact Us</h2>" >> index.html
+echo "        <label for=\"name\">Name:</label>" >> index.html
+echo "        <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your full name\" required>" >> index.html
+echo "        <label for=\"email\">Email:</label>" >> index.html
+echo "        <input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email address\" required>" >> index.html
+echo "        <label for=\"message\">Message:</label>" >> index.html
+echo "        <textarea id=\"message\" name=\"message\" rows=\"4\" placeholder=\"Your message here\" required></textarea>" >> index.html
+echo "        <button type=\"submit\">Submit</button>" >> index.html
+echo "    </form>" >> index.html
+echo "</body>" >> index.html
+echo "</html>" >> index.html
